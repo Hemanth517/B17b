@@ -1,0 +1,17 @@
+lfv,hbj
+
+<app-menu 
+[options ]="options$ | async"
+(themeChange)="themeChangeHandler($event)">
+</app-menu>
+
+<mat-toolbar>
+	<mat-toolbar-row>
+		<span>Dora</span>
+		<span class="spacer"></span>
+    <app-menu 
+      [options ]="options$ | async"
+      (themeChange)="themeChangeHandler($event)">
+    </app-menu>
+	</mat-toolbar-row>
+</mat-toolbar>

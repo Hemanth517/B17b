@@ -1,18 +1,38 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
+import { AppComponent } from "./app.component";
+import { AppMaterialModule } from "./app-material.module";
+import { HeaderComponent } from "./header/header.component";
+import { HelloComponent } from "./hello.component";
+import { MenuComponent } from "./menu/menu.component";
+import { StyleManagerService } from './style-manager.service';
+import { ThemeService } from './theme.service';
+import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
+    AppMaterialModule,
+    BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    MatSliderModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    HeaderComponent,
+    
+    MenuComponent
+  ],
+  bootstrap: [AppComponent],
+  providers: [StyleManagerService, ThemeService]
 })
-export class AppModule { }
+export class AppModule {}
+
+
+
+
